@@ -1,0 +1,61 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(135deg, #001f3f, #003366);
+    /* Gradient arka plan */
+    color: #FFFFFF;
+    /* Beyaz yazı rengi */
+}
+
+@keyframes lightBeam {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+.animate-lightBeam {
+    animation: lightBeam 5s ease-out infinite;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.team-member {
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.1);
+}
+
+.header-text {
+    --bg-size: 400%;
+    --color-one: hsl(156, 78%, 59%);
+    --color-two: hsl(40 95% 55%);
+    background: linear-gradient(90deg,
+            var(--color-one),
+            var(--color-two),
+            var(--color-one)) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 8s infinite linear;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-text {
+        animation: move-bg 8s linear infinite;
+    }
+
+    @keyframes move-bg {
+        to {
+            background-position: var(--bg-size) 0;
+        }
+    }
+}
